@@ -1,0 +1,12 @@
+h2.neu-flat.mb-2.mb-4.p-3(style="color:cadetblue;")= pais
+pre(style="text-wrap:wrap;font-family:inherit;font-size:1rem;")= data
+if articles.length>0
+  div.neu-flat.p-3(style="background-color:white;")
+    h3.neu-flat.my-2.mb-4.ps-1(style="color:cadetblue;") Noticias recientes
+      each _ in articles
+        if _['title']
+          h4.text-wrap(style="color:slategray;")= _['title']
+        if _['content']
+          p.m-0.p-0.text-wrap= _['content']
+        if _['url']
+          a.mb-2.ps-2(href=_['url'] style="word-wrap:break-word;color:gray;" target="_blank" and rel="noopener noreferrer")= _['url']

@@ -1,0 +1,252 @@
+
+*{
+    margin: 0;    
+    padding: 0;
+    box-sizing: border-box;
+    color: rgb(39, 39, 39);
+}
+
+a{
+    text-decoration: none;
+    color: rgb(39, 39, 39);
+}
+
+a:hover{
+    color: #026bb1;
+    transition: 0.3s;
+}
+
+.landing{
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    /* position: relative; */
+    animation: animate 16s ease-in-out infinite;
+}
+
+.outer{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,20,0.7);
+}
+@keyframes animate {
+    0%, 100%{
+        background-image: url(../assets/1.jpg);
+    }
+    25%{
+        background-image: url(../assets/2.jpg);
+    }
+    50%{
+        background-image: url(../assets/3.jpg);
+    }
+    75%{
+        background-image: url(../assets/4.jpg);
+    }
+}
+
+nav{
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav img{
+    width: 200px;
+    position: absolute;
+}
+
+.text-box{
+    width: 100%;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+
+.text-box h1{
+    color: #fff;
+    font-size: 62px;
+}
+
+.text-box p{
+    margin: 10px 0 40px;
+    font-size: 14px;
+    color: #fff;
+ }
+
+ .hero-btn{
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 12px 34px;
+    font-size: 13px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+ }
+
+ .hero-btn:hover{
+    border: 1px solid #026bb1;
+    background: #026bb1;
+    transition: 1s;
+ }
+.cardInfo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #FAFAFA;
+    width: 700px;
+    height: 500px;
+    border-radius: 10px;
+}
+
+.cardInfo h1{
+    font-size: 70px;
+}
+
+.cardInfo p{
+    font-size: 20px;
+}
+
+.cardInfo #btnBuscar{
+    margin-top: 20px;
+    width: 200px;
+    height: 25px;
+    border-radius: 5px;
+}
+
+#search .content{
+    display: grid;
+    grid-template-columns: 1fr 3fr; /* Divide el contenedor en dos columnas iguales */
+    width: 100%;
+    height: 100vh;
+}
+
+.searchCountry {
+    /* background-color: #005687; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.searchCountry .countryCard {
+    overflow-y: auto; /* Habilitar scroll vertical */
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    margin: 20px;
+    padding: 10px;
+    background-color: #FAFAFA;
+    width: 300px;
+    height: 500px;
+}
+
+.searchCountry .countryCard h3 {
+    margin: 10px 10px;
+}
+
+.searchCountry h2{
+    color: #fff;
+}
+
+.searchCountry .country-section {
+    padding: 10px;
+    border-bottom: 1px solid #ddd; /* Separación entre secciones */
+}
+
+.searchCountry .country-section:last-child {
+    border-bottom: none; /* Quitar borde de la última sección */
+}
+
+#country-list {
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-width: 400px;
+}
+
+ul {
+    list-style-type: none; /* Quitar los puntos de las listas */
+    padding-left: 0; /* Sin padding a la izquierda */
+    margin: 0; /* Sin margen */
+}
+
+li {
+    padding: 5px 0;
+}
+
+.infoCountry {
+    background-color: #FAFAFA; /* Color para la parte derecha */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #e9e9e9;
+    width: 1000px;
+    height: 80%;
+    /* height:500px; */
+    border-radius: 10px;
+}
+
+.card h1{
+    font-size: 50px;
+}
+
+#riskandnews{
+    display: none;
+    /* /* height: 50vh; */ */
+    /* height: 100%; */
+    /* padding-bottom:50px; */
+    /* width: 900px; */
+    /* /* background-color: antiquewhite; */ */
+    /* justify-content: space-between; */
+    /* align-items: center; */
+    /* flex-direction: row; */
+}
+
+.risk{
+    /* background-color: grey; */
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* height: 100%; */
+    /* width: 50%; */
+    /* overflow-y: scroll; */
+}
+
+.news{
+    /* background-color: darkgrey; */
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* height: 100%; */
+    /* width: 50%; */
+    /* overflow-y: scroll; */
+}
+.loader {
+    display: none;
+}
+
+.htmx-request .loader {
+    display: block;
+}
+
+.htmx-request.loader {
+    display: block;
+    
+}
