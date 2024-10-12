@@ -1,0 +1,62 @@
+extends ./partials/html.pug
+block content
+  div(style="height: 100dvh;")
+    div.w-100.h-100
+      div.landing
+        div.outer
+      // div.position-absolute.top-0.left-0.w-100.h-50
+        // nav.w-100
+        //   a(href='index.html')
+        //     img(src='assets/logo.png')
+
+    div.text-box
+      h1 RISKLESS
+      p ¿Es seguro viajar? ¡Descúbrelo con un click!
+      button#btnBuscar.hero-btn Buscar País
+
+    div#search.row.m-0(style="min-height: 100dvh;")
+      div.searchCountry.col-lg-4.neu-cut.rounded-0.p-0.pt-4
+        div.w-75.p-5.my-4.neu-flat(style="background-color:white;--bs-heading-color:gray;")
+          h3.neu-unpressed.p-1.ps-3(style="color:gray;") América
+          a.ps-3.d-block( href="#" hx-get=`/data?country=estados unidos` hx-trigger="click" hx-target='#data' hx-indicator='#indicator' ) Estados unidos
+          a.ps-3.d-block( href="#" hx-get=`/data?country=brasil` hx-trigger="click" hx-target='#data' hx-indicator='#indicator') Brasil
+          a.ps-3.d-block( href="#" hx-get=`/data?country=argentina` hx-trigger="click" hx-target='#data' hx-indicator='#indicator') Argentina
+          a.ps-3.d-block( href="#" hx-get=`/data?country=chile` hx-trigger="click" hx-target='#data' hx-indicator='#indicator') Chile
+          a.ps-3.d-block( href="#" hx-get=`/data?country=colombia` hx-trigger="click" hx-target='#data' hx-indicator='#indicator') Colombia
+
+          h3.neu-unpressed.p-1.ps-3(style="color:gray;") Europa
+          a.ps-3.d-block( href="#" hx-get=`/data?country=alemania` hx-trigger="click" hx-target='#data' hx-indicator='#indicator') Alemania
+          a.ps-3.d-block( href="#" hx-get=`/data?country=francia` hx-trigger="click" hx-target='#data' hx-indicator='#indicator') Francia
+          a.ps-3.d-block( href="#" hx-get=`/data?country=italia` hx-trigger="click" hx-target='#data' hx-indicator='#indicator') Italia
+          a.ps-3.d-block( href="#" hx-get=`/data?country=españa` hx-trigger="click" hx-target='#data' hx-indicator='#indicator') España
+          a.ps-3.d-block( href="#" hx-get=`/data?country=polonia` hx-trigger="click" hx-target='#data' hx-indicator='#indicator') Polonia
+
+          h3.neu-unpressed.p-1.ps-3(style="color:gray;") Asia
+          a.ps-3.d-block( href="#" hx-get=`/data?country=afganistan` hx-trigger="click" hx-target='#data' hx-indicator='#indicator') Afgánistan
+          a.ps-3.d-block( href="#" hx-get=`/data?country=china` hx-trigger="click" hx-target='#data' hx-indicator='#indicator') China
+          a.ps-3.d-block( href="#" hx-get=`/data?country=japon` hx-trigger="click" hx-target='#data' hx-indicator='#indicator') Japón
+          a.ps-3.d-block( href="#" hx-get=`/data?country=india` hx-trigger="click" hx-target='#data' hx-indicator='#indicator') India
+          a.ps-3.d-block( href="#" hx-get=`/data?country=corea del sur` hx-trigger="click" hx-target='#data' hx-indicator='#indicator') Corea del sur
+
+          h3.neu-unpressed.p-1.ps-3(style="color:gray;") África
+          a.ps-3.d-block( href="#" hx-get=`/data?country=nigeria` hx-trigger="click" hx-target='#data' hx-indicator='#indicator') Nigeria
+          a.ps-3.d-block( href="#" hx-get=`/data?country=egipto` hx-trigger="click" hx-target='#data' hx-indicator='#indicator') Egipto
+          a.ps-3.d-block( href="#" hx-get=`/data?country=sudafrica` hx-trigger="click" hx-target='#data' hx-indicator='#indicator') Sudáfrica
+          a.ps-3.d-block( href="#" hx-get=`/data?country=marruecos` hx-trigger="click" hx-target='#data' hx-indicator='#indicator') Marruecos
+          a.ps-3.d-block( href="#" hx-get=`/data?country=argelia` hx-trigger="click" hx-target='#data' hx-indicator='#indicator') Argelia
+
+          h3.neu-unpressed.p-1.ps-3(style="color:gray;") Oceanía
+          a.ps-3.d-block( href="#" hx-get=`/data?country=australia` hx-trigger="click" hx-target='#data' hx-indicator='#indicator') Australia
+          a.ps-3.d-block( href="#" hx-get=`/data?country=nueva zelanda` hx-trigger="click" hx-target='#data' hx-indicator='#indicator' ) Nueva zelanda
+          a.ps-3.d-block( href="#" hx-get=`/data?country=papua nueva guinea` hx-trigger="click" hx-target='#data' hx-indicator='#indicator') Papúa Nueva Guinea
+          a.ps-3.d-block( href="#" hx-get=`/data?country=fiyi` hx-trigger="click" hx-target='#data' hx-indicator='#indicator') Fiyi
+          a.ps-3.d-block( href="#" hx-get=`/data?country=Tonga` hx-trigger="click" hx-target='#data' hx-indicator='#indicator') Tonga
+
+      div.col.col-lg-8.p-5
+        div.m-3.neu-cut.p-4.h-100
+          button.neu-unpressed-orange.border-0( hx-post=`${requestURL}?page=1` hx-trigger="click" hx-target=`` hx-include=`[id=]`)
+            i.bi.bi-chevron-double-left
+
+          img#indicator.m-auto.htmx-indicator.loader(src="assets/load.gif")
+          div#data
+
